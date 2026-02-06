@@ -24,7 +24,7 @@ public class GestionDamBank {
         System.out.println();
         System.out.println("Ingrese el IBAN de la cuenta que quiere eliminar: ");
         String ibanAEliminar = UtilisPintar.teclado.nextLine();
-        int auxPosicionCuentaEliminar = 0;
+
         for (int i = 0; i < cb.length; i++) {
             if (cb[i] == null) {
             }
@@ -66,7 +66,7 @@ public class GestionDamBank {
     public static void crearCuenta() {
         String numIban, numPin;
         //String titular;
-        boolean ibanBien, pinBien = false;
+        boolean ibanBien, pinBien;
         Random r = new Random();
 
         System.out.println();

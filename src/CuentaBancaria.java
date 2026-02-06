@@ -3,7 +3,7 @@ import java.util.Random;
 public class CuentaBancaria {
 
     private String iban;
-    private String pin;
+    private final String pin;
     //private String nombreCompleto;
     private Cliente cliente;
     private float saldo;
@@ -33,15 +33,11 @@ public class CuentaBancaria {
     }
     public String getIban() {return iban;}
     public String getPin() {return pin;}
-    public void setIban(String iban) {
-        this.iban = iban;
-    }
+
     public Cliente getCliente() {
         return cliente;
     }
-    public void setCliente(Cliente c) {
-        this.cliente = c;
-    }
+
     public float getSaldo() {
         return saldo;
     }
@@ -115,7 +111,7 @@ public class CuentaBancaria {
         movimientos[numMovimientos] = movimiento;
         numMovimientos++;
     }
-    public boolean invertir(String tipoRiesgo, int cantidad) {
+    public void invertir(String tipoRiesgo, int cantidad) {
         int cantRiesgo;
         Random r = new Random();
         int valor;
@@ -131,7 +127,7 @@ public class CuentaBancaria {
             cantRiesgo = r.nextInt(1, 10) * valor;
         } else {
             System.out.println("TIPO DE INVERSIÓN NO VÁLIDA");
-            return false;
+            return;
         }
         System.out.println("***************RIESGO====> " + cantRiesgo + "%");
 
@@ -141,13 +137,11 @@ public class CuentaBancaria {
         if (this.saldo + cantidad <= 10) {
             System.out.println("NO PUEDES REALIZAR LA INVERSIÓN");
             System.out.println("TU CUENTA SE QUEDARÍA PELÁ :-(");
-            return false;
         }else {
             this.saldo = this.saldo + cantidad;
             System.out.println("INVERSIÓN REALIZADA");
             Movimientos m = new Movimientos("INV", cantidad, UtilisDatos.conceptos[r.nextInt(0,UtilisDatos.conceptos.length)]);
             registrarMovimiento(m);
-            return true;
         }
     }
     public void transferir(CuentaBancaria destino, float cantidad) {
