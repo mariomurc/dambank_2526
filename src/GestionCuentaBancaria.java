@@ -6,7 +6,7 @@ public class GestionCuentaBancaria {
         //NOS DEVULEVE LA OPCION QUE SELECCIONEMOS
         switch (opcion){
             case 1:
-                cb.mostrarInfoCuenta();
+                cb.mostrarInfoCuenta(true);
                 break;
             case 2:
                 System.out.println("IBAN: " + cb.getIban());

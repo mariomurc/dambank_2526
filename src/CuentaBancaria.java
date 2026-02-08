@@ -55,14 +55,17 @@ public class CuentaBancaria {
         System.out.println("· SALDO: " + getSaldo());
     }
 
-    public void mostrarInfoCuenta(){
+    public void mostrarInfoCuenta(boolean conMovimientos){
         System.out.println("*****************************");
         System.out.println("INFO COMPLETA CUENTA BANCARIA");
         System.out.println("*****************************");
         this.mostrarIban();
         this.mostrarTitular();
         this.mostrarSaldo();
-        this.mostrarMovimientos();
+        if (conMovimientos){
+            this.mostrarMovimientos();
+        }
+
     }
     public void ingreso(float cantidad, int tipo) {
         Random r = new Random();

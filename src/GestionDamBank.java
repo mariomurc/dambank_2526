@@ -6,20 +6,22 @@ public class GestionDamBank {
            //CuentaBancaria cb[] = new CuentaBancaria[Utilidades.NUM_MAX_CUENTAS];
 
 
-    public static void mostrarInformacionCuentas() {
+    /*public static void mostrarInformacionCuentas() {
         System.out.println("---- INFORMACIÓN DE TODAS LAS CUENTAS ----");
         boolean algo = false;
         for (int i = 0; i < UtilisPintar.NUM_MAX_CUENTAS; i++) {
             if (cb[i] != null) {
                 System.out.println("Cuenta " + (i + 1));
                 cb[i].mostrarInfoCuenta();
+                algo = true;
             }
         }
         if(!algo) System.out.println("NO HAY NINGUNA CUENTA");
-    }
+    }*/
 
 
-    static void eliminarCuentaBancaria() {
+
+    public static void eliminarCuentaBancaria() {
         mostrarListadoIbansActivos();
         System.out.println();
         System.out.println("Ingrese el IBAN de la cuenta que quiere eliminar: ");
